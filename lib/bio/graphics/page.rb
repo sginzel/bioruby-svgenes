@@ -322,7 +322,8 @@ module Bio
             self.send("draw_#{track.glyph}", {:x => x,
                                               :y => y,
                                               :width => width,
-                                              :height => height}.merge!(track.args))
+                                              :height => height,
+                                              :params => f.params}.merge!(track.args.merge(f.params || {})))
           end
           @track_top += (track.track_height) + 20
         else ##following stuff for the features
